@@ -1,0 +1,15 @@
+<h3>FUNCIONA</h3>
+
+<form [formGroup]="newListComic" (ngSubmit)="onSubmit()">
+  <label for="title">Title:<input type="text" formControlName="title"></label>
+  <div *ngIf="newListComic.get('title')?.hasError('required') && (newListComic.get('title')?.dirty || submitted)">Este campo es requerido</div>
+  <div *ngIf="newListComic.get('title')?.hasError('minlength') && (newListComic.get('title')?.dirty || submitted)">Title tiene que tener mas de 3 caracteres</div>
+  <label for="Author">Author:<input type="text" formControlName="author"></label>
+  <div *ngIf="newListComic.get('author')?.hasError('required') && (newListComic.get('author')?.dirty || submitted)">Este campo es requerido</div>
+  <div *ngIf="newListComic.get('author')?.hasError('minlength') && (newListComic.get('author')?.dirty || submitted)">Author tiene que tener mas de 3 caracteres</div>
+  <label for="Company">Company:<input type="text" formControlName="company"></label>
+  <div *ngIf="newListComic.get('company')?.hasError('required') && (newListComic.get('company')?.dirty || submitted)">Este campo es requerido</div>
+  <div *ngIf="newListComic.get('company')?.hasError('minlength') && (newListComic.get('company')?.dirty || submitted)">Company tiene que tener mas de 3 caracteres</div>
+  <label for="Cover">Cover:<input type="text" formControlName="cover"></label>
+  <button>Enviar</button>
+</form>

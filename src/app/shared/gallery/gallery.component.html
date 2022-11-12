@@ -1,0 +1,11 @@
+
+
+<div *ngFor="let comic of newComicList">
+  <p>{{comic.title}}</p>
+  <p>{{comic.author}} </p>
+  <p>{{comic.company}}</p>
+  <img width="350px" src="{{comic.cover}}">
+  <button (click)="editComic(comic)">Edit</button>
+</div>
+
+
